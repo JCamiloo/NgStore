@@ -9,9 +9,10 @@ import { Product } from 'src/app/product.model';
 export class ProductComponent {
 
   @Input() product: Product;
-    @Output() productClicked: EventEmitter<any> = new EventEmitter();
+  @Output() productClicked: EventEmitter<any> = new EventEmitter();
+  today = new Date();
 
-    addCart() {
-        this.productClicked.emit(this.product.price)
-    }
+  addCart() {
+      this.productClicked.emit(this.product.price)
+  }
 }
