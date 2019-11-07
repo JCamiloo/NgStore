@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -6,71 +7,50 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  products = [
+  products: Product[] = [
     {
-      "id": 1,
-      "image": "assets/images/product1.jpg",
-      "name": "Camisa 1",
-      "price": 80,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae? ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et doLorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae? ratione quae?"
+      id: '1',
+      image: 'assets/images/camiseta.png',
+      title: 'Camiseta',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
     {
-      "id": 2,
-      "image": "assets/images/product2.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
+      id: '2',
+      image: 'assets/images/hoodie.png',
+      title: 'Hoodie',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
     {
-      "id": 3,
-      "image": "assets/images/product3.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
+      id: '3',
+      image: 'assets/images/mug.png',
+      title: 'Mug',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
     {
-      "id": 4,
-      "image": "assets/images/product4.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
+      id: '4',
+      image: 'assets/images/pin.png',
+      title: 'Pin',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
     {
-      "id": 5,
-      "image": "assets/images/product5.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
+      id: '5',
+      image: 'assets/images/stickers1.png',
+      title: 'Stickers',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
     {
-      "id": 6,
-      "image": "assets/images/product6.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
+      id: '6',
+      image: 'assets/images/stickers2.png',
+      title: 'Stickers',
+      price: 80000,
+      description: 'bla bla bla bla bla'
     },
-    {
-      "id": 7,
-      "image": "assets/images/product7.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
-    },
-    {
-      "id": 8,
-      "image": "assets/images/product8.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
-    },
-    {
-      "id": 9,
-      "image": "assets/images/product9.jpg",
-      "name": "Camisa 2",
-      "price": 90,
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a odio facere nihil? Harum, nihil non! Repellat culpa sed adipisci necessitatibus ab minus, quas esse illo et dolorem ratione quae?"
-    }
-  ]
+  ];
 
   clickProduct(id: number) {
     console.log(id);
