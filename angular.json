@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "platzi-store": {
+    "store": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/platzi-store",
+            "outputPath": "dist/store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "platzi-store:build"
+            "browserTarget": "store:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "platzi-store:build:production"
+              "browserTarget": "store:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "platzi-store:build"
+            "browserTarget": "store:build"
           }
         },
         "test": {
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "platzi-store:serve"
+            "devServerTarget": "store:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "platzi-store:serve:production"
+              "devServerTarget": "store:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "platzi-store"
+  "defaultProject": "store"
 }
