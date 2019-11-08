@@ -7,6 +7,9 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  power = 10;
+  
   products: Product[] = [
     {
       id: '1',
