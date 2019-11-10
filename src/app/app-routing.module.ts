@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './product/components/products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailComponent } from './product/components/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
@@ -13,9 +13,15 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: '/home' },
-      { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
-      { path: 'products', component: ProductsComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { 
+        path: 'home', 
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule) 
+      },
+      { 
+        path: 'products', 
+        canActivate: [AdminGuard],
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule) 
+      },
       { path: 'contact', component: ContactComponent, canActivate: [AdminGuard] }
     ]
   },
