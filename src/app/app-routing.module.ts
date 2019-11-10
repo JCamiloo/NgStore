@@ -4,7 +4,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
 const routes: Routes = [
-  { path: '',
+  { 
+    path: '',
     component: LayoutComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -22,6 +23,10 @@ const routes: Routes = [
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       }
     ]
+  },
+  { 
+    path: 'admin', 
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) 
   },
   { 
     path: 'demo', 
