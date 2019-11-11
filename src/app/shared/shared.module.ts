@@ -6,13 +6,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { MaterialModule } from '../material/material.module';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    CartComponent
   ],
   imports: [
     CommonModule,
