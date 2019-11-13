@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CartService } from 'src/app/core/services/cart.service';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  totalProducts$: Observable<number>;
+  
+  constructor(private cartService: CartService) { 
+    this.totalProducts$ = this.cartService.cart$.pipe(map(products => products.length));
   }
-
 }
