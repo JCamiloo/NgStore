@@ -1,3 +1,4 @@
+import { AuthService } from './../../../core/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.buildForm();
   }
@@ -23,7 +25,15 @@ export class LoginComponent implements OnInit {
 
   login(event: Event) {
     event.preventDefault();
-    console.log(this.form.value);
+    if (this.form.valid) {
+      const value = this.form.value;
+      this.authService.login(value.email, value.password).then(() => {
+        this.router.navigate(['/admin']);
+      })
+      .catch(() => {
+        alert('No es valido');
+      });
+    }
   }
 
   private buildForm() {
