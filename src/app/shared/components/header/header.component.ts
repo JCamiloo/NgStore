@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent {
 
-  totalProducts$: Observable<number>;
+  totalProducts$: Observable<string>;
   
   constructor(private cartService: CartService) { 
-    this.totalProducts$ = this.cartService.cart$.pipe(map(products => products.length));
+    this.totalProducts$ = this.cartService.cart$.pipe(map(products => products.length.toString()));
   }
 }
