@@ -1,6 +1,8 @@
 export const environment = {
+  name: 'development',
   production: false,
   url_api: 'https://platzi-store.herokuapp.com',
+  sentry_dns: 'https://0228bbc33a8948d1bf4fe8242d745723@sentry.io/1827198',
   firebase: {
     apiKey: "AIzaSyDbri37A8GluCSGhoNi23MaUAy3I4dfdrg",
     authDomain: "ngstore-138b2.firebaseapp.com",

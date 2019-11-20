@@ -1,5 +1,7 @@
 export const environment = {
+    name: 'staging',
     production: true,
+    sentry_dns: 'https://0228bbc33a8948d1bf4fe8242d745723@sentry.io/1827198',
     url_api: 'https://platzi-store-stag.herokuapp.com',
     firebase: {
         apiKey: "AIzaSyDbri37A8GluCSGhoNi23MaUAy3I4dfdrg",

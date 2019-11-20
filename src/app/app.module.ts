@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler, Injectable } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,28 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from './../environments/environment';
+import * as Sentry from "@sentry/browser";
 
+@Injectable()
+export class SentryErrorHandler implements ErrorHandler {
+  constructor() {
+    Sentry.init({
+      dsn: environment.sentry_dns,
+      environment: environment.name
+    });
+  }
+
+  handleError(error) {
+    Sentry.captureException(error)
+  }
+}
+
+export function getErrorHandler(): ErrorHandler {
+  if (true) {
+    return new SentryErrorHandler()
+  }
+  return new ErrorHandler()
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +51,9 @@ import { environment } from './../environments/environment';
     AngularFireAuthModule,
     AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorHandler, useFactory: getErrorHandler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,7 +33,6 @@ export class ProductsService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.log(error);
     return throwError('Algo salió mal');
   }
 }
