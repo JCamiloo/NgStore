@@ -47,7 +47,6 @@ export class FormProductComponent implements OnInit {
   }
 
   uploadFile(event) {
-    console.log(event)
     const file: File = event.target.files[0];
     const fileName = file.name;
     const fileRef = this.afStorage.ref(fileName);

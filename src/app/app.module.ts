@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CoreModule } from '@core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from '@shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from './../environments/environment';
 import * as Sentry from "@sentry/browser";
+import { AuthInterceptor } from './auth.interceptor';
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -52,7 +53,8 @@ export function getErrorHandler(): ErrorHandler {
     AngularFireStorageModule
   ],
   providers: [
-    { provide: ErrorHandler, useFactory: getErrorHandler }
+    { provide: ErrorHandler, useFactory: getErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
