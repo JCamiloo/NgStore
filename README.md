@@ -7,3 +7,4 @@
 * AngularFire
 * Admin panel
 * Nested views
+* Sentry erros handler

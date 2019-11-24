@@ -1,5 +1,6 @@
 export const environment = {
   name: 'production',
+  production: true,
   sentry_dns: 'https://0228bbc33a8948d1bf4fe8242d745723@sentry.io/1827198',
   url_api: 'https://platzi-store.herokuapp.com',
   firebase: {

@@ -1,3 +1,4 @@
+import { DatesComponent } from './components/dates/dates.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'products', component: ProductsListComponent },
       { path: 'products/create', component: FormProductComponent },
       { path: 'products/edit/:id', component: ProductEditComponent },
+      { path: 'dates', component: DatesComponent },
     ]
   },
 ];
