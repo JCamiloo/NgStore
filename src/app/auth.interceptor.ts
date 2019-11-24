@@ -8,7 +8,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private tokenSrv: TokenService) { }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
     request = this.addToken(request);
     return next.handle(request);
   }

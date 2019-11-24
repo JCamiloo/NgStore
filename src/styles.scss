@@ -36,3 +36,24 @@ body {
 img {
     max-width: 100%;
 }
+
+.auth_card {
+    mat-card {
+        margin: auto;
+        margin-top: 8rem;
+        max-width: 20rem;
+        text-align: center;
+    }
+    
+    mat-card-header {
+        text-align: center;
+    }
+    
+    mat-card-actions {
+        padding-bottom: 2rem !important;
+    }
+}
+
+.m-l-5 {
+    margin-left: 0.5rem !important;
+}
