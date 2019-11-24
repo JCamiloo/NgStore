@@ -8,6 +8,7 @@ import { ExponentialPipe } from './pipes/exponential.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { MaterialModule } from '@material/material.module';
 import { CartComponent } from './components/cart/cart.component';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CartComponent } from './components/cart/cart.component';
     CommonModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuicklinkModule
   ], 
   exports: [
     HeaderComponent,

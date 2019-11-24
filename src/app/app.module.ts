@@ -14,6 +14,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from './../environments/environment';
 import * as Sentry from "@sentry/browser";
 import { AuthInterceptor } from './auth.interceptor';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -50,7 +51,8 @@ export function getErrorHandler(): ErrorHandler {
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    QuicklinkModule
   ],
   providers: [
     { provide: ErrorHandler, useFactory: getErrorHandler },
