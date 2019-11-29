@@ -5,6 +5,6 @@
 # Features
 * Angular Material
 * AngularFire
-* Admin panel
 * Nested views
-* Sentry erros handler
+* Sentry errors handler
+* Google Analytics
