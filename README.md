@@ -8,3 +8,4 @@
 * Nested views
 * Sentry errors handler
 * Google Analytics
+* Guess.js / QuicklinkStrategy
