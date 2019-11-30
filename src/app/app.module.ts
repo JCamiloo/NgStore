@@ -14,6 +14,7 @@ import { environment } from './../environments/environment';
 import * as Sentry from "@sentry/browser";
 import { AuthInterceptor } from './auth.interceptor';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
@@ -50,7 +51,8 @@ export function getErrorHandler(): ErrorHandler {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    QuicklinkModule
+    QuicklinkModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: ErrorHandler, useFactory: getErrorHandler },
