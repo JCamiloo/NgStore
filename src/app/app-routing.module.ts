@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 /*
 import { PreloadService } from './core/services/preload.service';
@@ -10,31 +9,7 @@ import { QuicklinkStrategy } from 'ngx-quicklink';
 const routes: Routes = [
   { 
     path: '',
-    component: LayoutComponent,
-    children: [
-      { path: '', pathMatch: 'full', redirectTo: '/home' },
-      { 
-        path: 'home', 
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-        //data: { preload: true}
-      },
-      { 
-        path: 'products', 
-        loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
-        //data: { preload: true}
-      },
-      { path: 'contact', 
-        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
-        //data: { preload: true}
-      },
-      { path: 'order', 
-        loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
-      },
-      { 
-        path: 'demo', 
-        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) 
-      },
-    ]
+    loadChildren: () => import('./website/website.module').then(m => m.WebsiteModule)
   },
   { 
     path: 'admin', 
