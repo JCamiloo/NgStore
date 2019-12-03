@@ -9,6 +9,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { MaterialModule } from '@material/material.module';
 import { CartComponent } from './components/cart/cart.component';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { FibonacciPipe } from './pipes/fibonacci.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     FooterComponent,
     ExponentialPipe,
     HighlightDirective,
-    CartComponent
+    CartComponent,
+    FibonacciPipe
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     HeaderComponent,
     FooterComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    FibonacciPipe
   ]
 })
 export class SharedModule { }
